@@ -1,0 +1,317 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta name="author" content="Me" />
+                <meta name="keywords" content="opensource,pelican,python,NLP" />
+                <meta name="description" content="A command line tool for natural language commands" />
+    
+    <title>The beginning of Alex - Gotchyas and nerd glasses</title>
+
+            <link rel="stylesheet" href="http://chitraa.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+        <link href="http://chitraa.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href="http://chitraa.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    
+        <link href="/theme/css/pelican-twitchy.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+            <link href="http://chitraa.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Gotchyas and nerd glasses ATOM Feed"/>
+        </head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://chitraa.github.io" title="Gotchyas and nerd glasses" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://chitraa.github.io/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                                                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                                                                                                                        <li>
+                        <a href="http://github.com/chitraa" title="github"><i class="fa fa-github-square fa-lg padding-small"></i></a>
+                    </li>
+                                                                                                                        <li>
+                        <a href="http://twitter.com/chit_raa" title="twitter"><i class="fa fa-twitter-square fa-lg padding-small"></i></a>
+                    </li>
+                                </ul></li>
+                                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://chitraa.github.io/">
+                                                                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            Gotchyas and nerd glasses
+                                            </a>
+                </li>
+                                    <li>
+                        <a href="http://chitraa.github.io/archives.html">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                                                                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Social
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                                                                                                                            <li>
+                        <a href="http://github.com/chitraa" title="github">
+                            <i class="fa fa-github-square fa-lg padding-small"></i>
+                            github
+                        </a>
+                    </li>
+                                                                                                                            <li>
+                        <a href="http://twitter.com/chit_raa" title="twitter">
+                            <i class="fa fa-twitter-square fa-lg padding-small"></i>
+                            twitter
+                        </a>
+                    </li>
+                                    </ul></li>
+                                                
+                                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                                    </ul></li>
+                                
+                                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                                        <li class="active">
+                        <a href="http://chitraa.github.io/category/alex.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Alex
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                                    </ul></li>
+                                
+                            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                                                <section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://chitraa.github.io/beginning-of-alex.html"
+                           rel="bookmark"
+                           title="Permalink to The beginning of Alex">
+                            The beginning of Alex
+                        </a>
+                        <small>
+                        <footer class="post-info">
+    <div id="publish-info" class="publish-info-block">
+        <span class="published">
+            <i class="fa fa-calendar padding-small"></i><time datetime="2014-09-30T00:15:00"> Tue 30 September 2014</time>
+        </span>
+        <span class="category">
+            <i class="fa fa-folder-open padding-small"></i><a href="http://chitraa.github.io/category/alex.html">Alex</a>
+        </span>
+                <span class="tags">
+            <i class="fa fa-tags padding-small"></i>
+                    <a href="http://chitraa.github.io/tag/opensource.html">opensource</a> /                     <a href="http://chitraa.github.io/tag/pelican.html">pelican</a> /                     <a href="http://chitraa.github.io/tag/python.html">python</a> /                     <a href="http://chitraa.github.io/tag/nlp.html">NLP</a>                </span>
+            </div>
+    </footer><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="entry-content">
+                    <p>As a part of a course <em>Architecture of Open Source Technologies</em> offered by <a href="mailto:user@example.com">Dr Ram P Rustagi</a>, at PESIT, Bangalore, two of my batchmates, <a href="anushree.apk@gmail.com">Anushree Prasanna Kumar</a>, <a href="pratheekonline@gmail.com">Pratheek M S</a> and <a href="chits.26@gmail.com">I</a> are doing an open-source project which is named <a href="https://github.com/pratheekms/alex"><strong>Alex</strong></a> for now.</p>
+<h3>What is open-source code ?</h3>
+<p>According to Wikipedia, <a href="http://en.wikipedia.org/wiki/Open-source_software">open-source software</a> (OSS) is computer software with its source code made available with a license in which the copyright holder provides the rights to study, change and distribute the software to anyone and for any purpose. </p>
+<h3>Why open-source the code?</h3>
+<ol>
+<li>I believe if the community is active and maintains the code properly, the code itself gets <strong>crowd tested</strong>, eliminating the need for software testing (Companies spend quite a lot on hiring people who test the code at various stages).</li>
+<li>While attending some talks in and around Bangalore, people threw some light on how <strong>fast prototyping</strong> is, i.e. building upon things. Building from scratch moves the main focus from what you actually want to achieve. I'm using <a href="https://github.com/getpelican/pelican">Pelican</a> myself, an open source static site generator, written in Python, for creating this blog. It was fast and simple, and I could directly focus on writing this blog, in markdown.</li>
+<li>The entire world can read the code, understand, <strong>gain inspiration</strong> from the architectures of various famous frameworks to create new content. <a href="http://aosabook.org/en/index.html">This book</a> shows various examples of open source applications. As quoted in the aosabook -<blockquote>
+<p>Architects look at thousands of buildings during their training, and study critiques of those buildings written by masters. In contrast, most software developers only ever get to know a handful of large programs well—usually programs they wrote themselves—and never study the great programs of history. As a result, they repeat one another's mistakes rather than building on one another's successes. </p>
+</blockquote>
+</li>
+</ol>
+<h3>Inspiration</h3>
+<p>Our inspiration came from a famous open-source project <a href="https://github.com/pickhardt/betty"><strong><em>Betty</em></strong></a>, a friendly English-like interface for your command line. We're being taught <a href="http://nlp-course.appspot.com/lectures.html#">Natural Language Processing</a> by Prof Anantharaman Narayana, and have realized that there is a lot of potential in improvising the current product with our gained knowledge.</p>
+<p>Betty is like <a href="http://en.wikipedia.org/wiki/Siri">Siri</a> or <a href="http://en.wikipedia.org/wiki/Google_Now">Google Now</a> for the <a href="http://en.wikipedia.org/wiki/Command-line_interface"><strong>command line</strong></a>. The tool translates plain English into commands, and displays the command it runs and the command output, in the terminal. The current codebase of Betty is written in Ruby. </p>
+<h3>Now what is Natural Language Processing?</h3>
+<p>Again Wikipedia says, <a href="http://en.wikipedia.org/wiki/Natural_language_processing">Natural Language Processing</a> (NLP) is a field of computer science, artificial intelligence, and linguistics concerned with the interactions between computers and human (natural) languages.</p>
+<p>It deals with analyzing, understanding and generating the languages that humans use naturally in order to interface with computers in both written and spoken contexts using natural human languages instead of computer languages. </p>
+<h3>Roadmap</h3>
+<h4>We have decided to start with our own version in <em>Python</em> mainly because:</h4>
+<ul>
+<li>All of us are more proficient in Python. But hey! We're engineering students, still learning, it's not hard for all of us to pick up another scripting language like Ruby. But we got more reasons to counter with. </li>
+<li>Python mostly comes preintalled in most of the linux/mac distros.</li>
+<li>The <a href="http://en.wikipedia.org/wiki/Natural_Language_Toolkit">NLTK</a> python libraries are used by a large number of people. It has very efficiently written modules, and has a lot of community support online. </li>
+<li>Building the pyBetty/Alex from scratch gives us a lot of flexibility, in twisting the code from our point of view, while taking a lot of inspiration from the actual Betty project. Some of the vulnerabilities where we think we can improve are : <ul>
+<li>Preprocessing, tokenizing (stem and lemmatize) the sentences instead of directly mapping some group of sentences.</li>
+<li>Try to infer the semantic meaning of sentences. (Intelligent information retrieval)</li>
+<li>Initial task will be trying to think of all the different natural language command line statements people can make. We can then do some NLP techniques (such as Language Models, Wordnet look ups etc or even use some Machine learning techniques) to get a good implementation. All this starting with one example command.</li>
+</ul>
+</li>
+</ul>
+<h4>In software engineering terms, we plan to follow an <a href="http://en.wikipedia.org/wiki/Agile_software_development">Agile</a> model, whereby there are</h4>
+<ol>
+<li><em>Individuals and interactions</em> over Processes and tools</li>
+<li><em>Working software</em> over Comprehensive documentation</li>
+<li><em>Customer collaboration</em> over Contract negotiation</li>
+<li><em>Responding to change</em> over Following a plan</li>
+</ol>
+<h4>Why will all cool geeks accustomed to using the terminal interface use this tool?</h4>
+<p>This can be used by beginners to command the computer in simple english words, instead of using man pages or googling for small-small things. I agree, lots of useful commands can be aliased and put into .bashrc, but natural language commands are always more intuitive. 
+For example, long text processing commands(using sed/grep/tr) are always a pain. Simple english words will save time.</p>
+<h3>Challenges?</h3>
+<p>A lot. Most of the problems in this domain are <strong>open problems</strong>, and don't have the exact solution. Lot of <strong>ambiguities</strong> arise when we try to extract the semantic meaning from sentences. Moreover, some methods may require a lot of <em>computations</em>, which might slow down the process. With lesser computations, the <em>accuracy</em> might reduce. We need to find a proper balance between them.</p>
+<h3>List of open source tools used :</h3>
+<ol>
+<li><a href="http://www.sublimetext.com/">Sublime Text</a>, an amazing text editor, with the <a href="https://github.com/revolunet/sublimetext-markdown-preview">markdown</a> plugin.</li>
+<li>Python Language (CPython, the reference implementation of Python is free and open-source software)</li>
+<li><a href="https://github.com/getpelican/pelican">Pelican</a>, a static site generator, written in Python.</li>
+<li><a href="http://getbootstrap.com/">Bootstrap3</a>, a framework for developing responsive, mobile first projects on the web.</li>
+<li><a href="http://git-scm.com/">Git</a>, version control system.</li>
+<li><a href="https://pages.github.com/">Github pages</a> to host the blog free of cost :D</li>
+</ol>
+                </div>
+                <footer class="text-right">
+                    <p>- Me</p>
+                </footer>
+                        <section id="comments" class="comments ">
+        <hr/>
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+            </div>
+                    </div>
+    </article>
+</section>
+            </div>
+            <footer>
+    <div class="container-fluid">
+        <hr>
+        <div class="row">
+            <div class="col-xs-4 text-left">
+                
+            </div>
+            <div class="col-xs-8 text-right">
+                <p>Built using <a href="http://docs.getpelican.com/en/latest">Pelican</a>, <a href="getbootstrap.com">Bootstrap3</a> and the <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a> theme.</p>
+                <p>&copy; 2014 Chitra Singh</p>
+            </div>
+        </div>
+            </div>
+</footer>        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/theme/js/jquery-1.11.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+        </script>
+        <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-55242332-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+        
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'chitrasingh'; // required: replace example with your forum shortname
+
+                        var disqus_identifier = 'beginning-of-alex';
+                var disqus_url = 'http://chitraa.github.io/beginning-of-alex.html';
+    
+    var disqus_config = function () {
+        this.language = "en";
+    };
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+<!-- /disqus --></body>
+</html>

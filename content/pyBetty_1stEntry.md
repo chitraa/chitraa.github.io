@@ -2,7 +2,7 @@ Title: The beginning of Alex
 Date: 2014-09-30 00:15
 Category: Alex
 Tags: opensource, pelican, python, NLP
-Slug: my-opensource-post
+Slug: beginning-of-alex
 Author: Me
 Summary: A command line tool for natural language commands
 
@@ -68,3 +68,5 @@ A lot. Most of the problems in this domain are __open problems__, and don't have
 2. Python Language (CPython, the reference implementation of Python is free and open-source software)
 3. [Pelican](https://github.com/getpelican/pelican), a static site generator, written in Python.
 4. [Bootstrap3](http://getbootstrap.com/), a framework for developing responsive, mobile first projects on the web.
+5. [Git](http://git-scm.com/), version control system.
+6. [Github pages](https://pages.github.com/) to host the blog free of cost :D
