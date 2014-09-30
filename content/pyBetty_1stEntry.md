@@ -6,7 +6,7 @@ Slug: beginning-of-alex
 Author: Me
 Summary: A command line tool for natural language commands
 
-As a part of a course _Architecture of Open Source Technologies_ offered by [Dr Ram P Rustagi](<mailto:user@example.com>), at PESIT, Bangalore, two of my batchmates, [Anushree Prasanna Kumar](<anushree.apk@gmail.com>), [Pratheek M S](<pratheekonline@gmail.com>) and [I](<chits.26@gmail.com>) are doing an open-source project which is named [__Alex__](https://github.com/pratheekms/alex) for now.
+As a part of a course _Architecture of Open Source Technologies_ offered by [Dr Ram P Rustagi](<mailto:rprustagi@pes.edu>), at PESIT, Bangalore, two of my batchmates, [Anushree Prasanna Kumar](<mailto:anushree.apk@gmail.com>), [Pratheek M S](<mailto:pratheekonline@gmail.com>) and [I](<mailto:chits.26@gmail.com>) are doing an open-source project which is named [__Alex__](https://github.com/pratheekms/alex) for now.
 
 
 ###What is open-source code ?
