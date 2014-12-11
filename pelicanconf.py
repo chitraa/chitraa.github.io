@@ -39,3 +39,6 @@ DEFAULT_PAGINATION = 4
 THEME = "/home/chitra/code/7thsem/aost/pelican-twitchy"
 
 GITHUB_URL = 'http://github.com/chitraa/'
+
+STATIC_PATHS = ['images', 'pdfs']
+
