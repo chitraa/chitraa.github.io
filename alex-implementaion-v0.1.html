@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="" />
-
-    <title> - Gotchyas and nerd glasses</title>
+                <meta name="author" content="Me" />
+                <meta name="keywords" content="opensource,pelican,python,NLP,TFID,NER,commandline" />
+                <meta name="description" content="A command line tool for natural language commands" />
+    
+    <title>Alex implementaion v0.1 - Gotchyas and nerd glasses</title>
 
             <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
         <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
@@ -121,7 +123,7 @@
                     </a>
                 </li>
                 <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
-                                        <li >
+                                        <li class="active">
                         <a href="/category/alex.html">
                             <i class="fa fa-folder-open padding-small"></i>
                             Alex
@@ -143,19 +145,18 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <div class="row">
-    <div class="col-lg-12">
-        <header class="page-header">
-            <h1>Latest Articles featuring </h1>
-        </header>
-    </div>
-</div>
-                <div class="row">
-    <div class="col-lg-12">
-                        <article>
-                <h2>
-                    <a href="/alex-implementaion-v0.1.html">Alex implementaion v0.1</a>
-                    <small>
+                                                <section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="page-header">
+                    <h1>
+                        <a href="/alex-implementaion-v0.1.html"
+                           rel="bookmark"
+                           title="Permalink to Alex implementaion v0.1">
+                            Alex implementaion v0.1
+                        </a>
+                        <small>
                         <footer class="post-info">
     <div id="publish-info" class="publish-info-block">
         <span class="published">
@@ -168,37 +169,71 @@
             <i class="fa fa-tags padding-small"></i>
                     <a href="/tag/opensource.html">opensource</a> /                     <a href="/tag/pelican.html">pelican</a> /                     <a href="/tag/python.html">python</a> /                     <a href="/tag/nlp.html">NLP</a> /                     <a href="/tag/tfid.html">TFID</a> /                     <a href="/tag/ner.html">NER</a> /                     <a href="/tag/commandline.html">commandline</a>                </span>
             </div>
-    </footer><!-- /.post-info -->                    </small>
-                </h2>
-                <div class="summary">
-                    <p>A command line tool for natural language commands</p>
-                </div>
-            </article>
-                        <hr/>
-                                <article>
-                <h2>
-                    <a href="/beginning-of-alex.html">The beginning of Alex</a>
-                    <small>
-                        <footer class="post-info">
-    <div id="publish-info" class="publish-info-block">
-        <span class="published">
-            <i class="fa fa-calendar padding-small"></i><time datetime="2014-09-30T00:15:00"> Tue 30 September 2014</time>
-        </span>
-        <span class="category">
-            <i class="fa fa-folder-open padding-small"></i><a href="/category/alex.html">Alex</a>
-        </span>
-                <span class="tags">
-            <i class="fa fa-tags padding-small"></i>
-                    <a href="/tag/opensource.html">opensource</a> /                     <a href="/tag/pelican.html">pelican</a> /                     <a href="/tag/python.html">python</a> /                     <a href="/tag/nlp.html">NLP</a>                </span>
+    </footer><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
             </div>
-    </footer><!-- /.post-info -->                    </small>
-                </h2>
-                <div class="summary">
-                    <p>A command line tool for natural language commands</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="entry-content">
+                    <h4>Small update on what we’ve done till now.</h4>
+<p>When a new query is fed in, two things may happen:
+ 1. Either the query may be resolved, under pre-written categories.
+ 2. Or the query is new, and an online lookup can be done.</p>
+<h4>First part</h4>
+<p>Using tf-idf ranking for text mining, the user query is mapped to a query in the database which is closest to it. This in turn, gives us a category to be fed to a handler. The handler, tries resolving the query by running commands and interacting with the user. Regular expressions are used to identify file and file-types wherever possible.</p>
+<h4>Second part</h4>
+<p>For weather related queries, a <a href="http://en.wikipedia.org/wiki/Named-entity_recognition">Named Entity Recognizer</a>(NER) is used to identify a word as a location. Yahoo APIs are used to fetch the weather for a location.
+For more generic queries, NER and duckduckgo APIs are used as a fallback, to give results from the web. If this fails too, alex gives up.</p>
+<h3>Now how does the Query Matcher work?</h3>
+<p>It is an implementation of <a href="http://en.wikipedia.org/wiki/Tf%E2%80%93idf">TF-IDF</a> ranking (term frequency - inverse document frequency) for information retrieval and text mining.</p>
+<ol>
+<li>Each sentence in 'corpus.txt' acts as a document, and the processed words in each sentence act as terms.</li>
+<li>Frequently occurring stop-words are removed.</li>
+<li>Stemming is done on each word, i.e. reducing inflected or derived words to their word stem, base or root form.</li>
+<li>
+<p>A new user query undergoes tf-idf ranking, and the highest ranked sentence(document) is picked up and mapped to a category.</p>
+</li>
+<li>
+<p><strong>Term Frequency</strong> is the number of times each term t occurs in document d.</p>
+</li>
+<li>
+<p><strong>Inverse Document Frequency</strong> measures how much information the term provides, i.e. whether the term is common or rare across all documents. This is obtained by dividing the total number of documents, by the number of documents containing the term, and then taking the logarithm of that quotient.</p>
+</li>
+</ol>
+<h3>A brief architecture of code structure</h3>
+<p><img alt="Architecture" src="static/images/alexArch.png" /></p>
+<h3>Things which didn’t work?</h3>
+<p>We were trying to make use of <strong>dependency parsing</strong> for a sentence. 
+It basically parses a sentence after doing part of speech tagging, to identify the verb in the sentence, which would help identify the subject and the object. We weren't able to make judcious use of Stanford's corenlp parser. 
+If the sentence is semantically correct, the object can be used to identify the category. But we’re not sure, if this would have performed better than tf-idf ranking.</p>
+<h3>Future prospects</h3>
+<ol>
+<li>Short term</li>
+<li>Spelling correction using <a href="http://en.wikipedia.org/wiki/Edit_distance">edit distance</a>, and context specific spell correction.</li>
+<li>Error reporting, collecting non working queries.</li>
+<li>Long term</li>
+<li>Dependency parsing (Probabilistic Context Free Grammars).</li>
+<li>Add more relevant queries.</li>
+</ol>
                 </div>
-            </article>
-                                </div>
-</div>
+                <footer class="text-right">
+                    <p>- Me</p>
+                </footer>
+                        <section id="comments" class="comments ">
+        <hr/>
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+            </div>
+                    </div>
+    </article>
+</section>
             </div>
             <footer>
     <div class="container-fluid">
@@ -245,24 +280,28 @@
         })();
     </script>
     <!-- End Google Analytics Code -->
-    <script>
-    function FadeInOnScroll(ObjectList){
-        ObjectList.each(function(i) {
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            
-            if( bottom_of_window > bottom_of_object ){
-                $(this).fadeTo(750,1);
-            }
-        });
-    }
+        
 
-    articles = $("article").fadeTo(0, 0.05);
-    FadeInOnScroll(articles)
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'chitrasingh'; // required: replace example with your forum shortname
 
-    $(window).scroll(function() {
-        FadeInOnScroll(articles)
-    });
-</script>
-</body>
+                        var disqus_identifier = 'alex-implementaion-v0.1';
+                var disqus_url = '/alex-implementaion-v0.1.html';
+    
+    var disqus_config = function () {
+        this.language = "en";
+    };
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+<!-- /disqus --></body>
 </html>
